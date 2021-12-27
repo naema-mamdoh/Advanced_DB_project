@@ -14,7 +14,7 @@
   <body>
     <div class="container">
       <div class="navbar">
-        <h1><a href="project.html">University City Application Form</a></h1>
+        <h1><a href="project.php">University City Application Form</a></h1>
       </div>
       <div class="content">
         <br /><br />
