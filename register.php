@@ -388,7 +388,7 @@
 $errMsg1 ="";
 $name="";
 
-if (isset($_POST['sub_mit']))
+if (isset($_POST['submit']))
 {
   echo "Welcome ". $_POST['name']. "<br>";
 }
