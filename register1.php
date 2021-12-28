@@ -145,16 +145,45 @@ if(!$thereis_error)
 #                                              #
 ################################################
 
-
 #empty variables to not display them in Value attribute
 $name=$pass=$mail=$sphone=$sid=$religion=$gender=$address=$govern=$state=$faculty=$level=$gpa=$Fname=$fid=$fphone=$fjob="";
-
-
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1><a href="project.php">University City Application Form</a></h1>
+      </div>
+    <div class="content " >
+        <h2  style="  color: green;
+  font-weight: bold;" id="dn">your request is submitted successfully!</h2>
+         
+    </div>
+        
+       
+     
+    </div>
+  </body>
+</html>
+<?php
 }
-
-
- ?>
- <html lang="en">
+else
+{
+?>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -184,7 +213,7 @@ $name=$pass=$mail=$sphone=$sid=$religion=$gender=$address=$govern=$state=$facult
                 name="name"
                 value="<?php  echo $name; ?>"
               />
-              <span class="err"><?php echo $errname; ?></span>
+              <span class="err"> <?php echo $errname; ?> </span>
             </div>
             <div class="col">
               <label> Password: </label>
@@ -544,3 +573,9 @@ $name=$pass=$mail=$sphone=$sid=$religion=$gender=$address=$govern=$state=$facult
   </body>
 </html>
 
+
+<?php
+}
+
+ ?>
+ 
