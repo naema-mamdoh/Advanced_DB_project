@@ -42,7 +42,7 @@ function test_input($data) {
 
 #empty variables to not display them in Value attribute
 $errsid="";
-$sid="";
+#$sid="";
 }
 
 ?>
