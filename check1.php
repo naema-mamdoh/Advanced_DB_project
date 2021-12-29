@@ -12,7 +12,8 @@ if(mysqli_connect_errno())
 $errsid="";
 $sid="";
 $thereis_error=false;
-
+$tag;
+$accept="";
 function test_input($data) {
  $data = trim($data);
  $data = stripslashes($data);
@@ -28,17 +29,25 @@ function test_input($data) {
  else if(strlen($_POST['nationalidcheck'])!=14){
     $errsid="ID-Number must have 14 digits"; $thereis_error=true;
   }
- else  $sid=test_input($_POST['nation-id']);
+ else  $sid=test_input($_POST['nationalidcheck']);
  }
 
  if(!$thereis_error)
 {
-################################################
-#                                              #
-#-------------YOUR CODE NEAMAA HERE------------#
-#                                              #
-################################################
-
+ # here i made a select query in the value of text box
+  #search in the data base with this value and then returned it in $result
+  $sql="select accepted from Student  where Ssn='".$sid."'";
+  $result=$con->query($sql);
+  #if $result is not empty then loop in it's content and return each row in $row 
+  # $row contain accepted value
+  if($result->num_rows > 0)
+{
+	while($row=$result->fetch_assoc())
+	{
+		# convert the value returned to integer so we can make comarison in it
+    $accept=(int)$row;
+	}
+}
 
 #empty variables to not display them in Value attribute
 $errsid="";
@@ -80,6 +89,17 @@ $errsid="";
             <input type="submit" value="Check" name="Check" />
           </div>
         </form>
+        <?php
+            if($accept==1){
+              $tag='<div class="result">you are accepted<br></div>';
+              echo $tag;
+            }
+            else{
+              $tag='<div class="result">you are not accepted</div>';
+              echo $tag;
+            }
+          ?>
+      
       </div>
     </div>
   </body>
