@@ -140,7 +140,6 @@ else $fjob=test_input($_POST['F_job']);
 if(!$thereis_error)
 {
   $con->query("call push_student('".$_POST['nation-id']."','".$_POST['name']."','".$_POST['pass']."','".$_POST['gender']."',Date'".$_POST['year']."-".$_POST['month']."-".$_POST['day']."','".$_POST['address']."','".$_POST['religiont']."','".$_POST['govern']."','".$_POST['email']."','".$_POST['state']."','".$_POST['faculty']."'," .$_POST['gpa']. "," .$_POST['level']. ",'".$_POST['F_nationid']."','".$_POST['F_name']."','".$_POST['F_job']."','".$_POST['F_phone']."','".$_POST['telephone']."');");
-
 #empty variables to not display them in Value attribute
 $name=$pass=$mail=$sphone=$sid=$religion=$gender=$address=$govern=$state=$faculty=$level=$gpa=$Fname=$fid=$fphone=$fjob="";
 ?>
